@@ -28,10 +28,17 @@ public abstract class BaseUploadFileModel<Resp, Data> extends BaseModel<Resp, Da
      */
     private static final String DEFAULT_PART_NAME = "file";
 
+    public BaseUploadFileModel() {
+    }
+
+    public BaseUploadFileModel(ValueCallback<Data> callback) {
+        this.mCallback = callback;
+    }
+
     /**
      * 上传接口
      */
-    public abstract Observable<Resp> getUploadObservable(RequestBody body);
+    protected abstract Observable<Resp> getUploadObservable(RequestBody body);
 
     /**
      * 上传单个文件，使用默认上传文件参数名 {@link #DEFAULT_PART_NAME}

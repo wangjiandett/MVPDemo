@@ -94,7 +94,7 @@ public abstract class BaseModel<Resp, Data> {
     /**
      * 取消请求监听
      */
-    public void cancel() {
+    public void onCancel() {
         if (this.mDisposable != null && !this.mDisposable.isDisposed()) {
             this.mDisposable.dispose();
         }
@@ -208,6 +208,5 @@ public abstract class BaseModel<Resp, Data> {
      * @param msg the fail message
      */
     protected abstract void onFail(String msg);
-
 
 }

@@ -34,7 +34,7 @@ public abstract class SimpleValueCallback<T> implements ValueCallback<T> {
     }
 
     @Override
-    public void cancel() {
+    public void onCancel() {
 
     }
 }

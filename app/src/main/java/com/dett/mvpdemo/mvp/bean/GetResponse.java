@@ -1,6 +1,6 @@
 package com.dett.mvpdemo.mvp.bean;
 
-public class TestResponse {
+public class GetResponse {
     public int id;
     public String title;
     public String imgUrl;

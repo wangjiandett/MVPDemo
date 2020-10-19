@@ -12,6 +12,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * json解析疯转Gson帮助类
+ *
+ * @author wangjian
+ */
 public class GsonHelper {
     //定义并配置gson
     public static final Gson gson = new GsonBuilder()//建造者模式设置不同的配置

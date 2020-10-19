@@ -21,21 +21,29 @@ public abstract class BaseDownloadFileModel implements ProgressResultListener {
 
     private Disposable mDisposable;
     private boolean isDownloading;
+    protected ValueCallback<File> mCallback;
+
+    public BaseDownloadFileModel() {
+    }
+
+    public BaseDownloadFileModel(ValueCallback<File> mCallback) {
+        this.mCallback = mCallback;
+    }
 
     /**
      * 监听下载进度，需要设置拦截器
      *
      * @param listener 监听下载进度
      */
-    protected abstract Observable<ResponseBody> getDownloadObservable(ProgressResultListener listener);
+    protected abstract Observable<ResponseBody> getDownloadObservable(String url);
 
     /**
      * 下载文件
      *
      * @param destFile 文件保存位置
      */
-    public void download(final File destFile) {
-        getDownloadObservable(this)
+    public void download(String url, final File destFile) {
+        getDownloadObservable(url)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .map(new ResultFilter(destFile))
@@ -102,9 +110,9 @@ public abstract class BaseDownloadFileModel implements ProgressResultListener {
     /**
      * the success callback
      *
-     * @param value the success value
+     * @param file the success value
      */
-    protected abstract void onSuccess(File value);
+    protected abstract void onSuccess(File file);
 
     /**
      * the fail callback

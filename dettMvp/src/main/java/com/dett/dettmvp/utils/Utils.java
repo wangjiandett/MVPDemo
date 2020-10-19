@@ -16,6 +16,13 @@ import java.io.InputStream;
  */
 public class Utils {
 
+    /**
+     * 保存流到文件中
+     *
+     * @param inputStream 输入流
+     * @param path 文件地址
+     * @return 是否保存成功
+     */
     public static boolean writeInputStream2File(InputStream inputStream, String path) {
         boolean result = true;
         BufferedInputStream bufferedInputStream = null;

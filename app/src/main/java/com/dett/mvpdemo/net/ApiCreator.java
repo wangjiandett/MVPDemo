@@ -59,7 +59,7 @@ public class ApiCreator {
      */
     public static ApiInterfaces getDownloadFileInterface(ProgressResultListener listener) {
         ApiService test = new ApiService.Builder()
-                .baseUrl(BASE_URL) // "https://imtt.dd.qq.com/"  "https://d1.music.126.net/"
+                .baseUrl(BASE_URL) // BASE_URL https://imtt.dd.qq.com/
                 // 监听下载进度，需要设置拦截器
                 .netInterceptor(new DownloadInterceptor(listener))
                 .interceptor(updateHeadersInterceptor())
