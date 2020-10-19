@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    def dep = rootProject.ext.dependencies
+    def testDep = rootProject.ext.testDependencies
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //Retrofit
+    api dep["retrofit2"]
+    //Gson converter
+    api dep["converter-gson"]
+    //Okhttp
+    api dep["okhttp3"]
+    //Okhttp logging
+    api dep["okhttp3-logging"]
+    //RxJava　adapter
+    api dep["retrofit2-rxjava2-adapter"]
+    // rxandroid
+    api dep["rxAndroid"]
+    // 分包使用
+    api dep["support-multidex"]
+
+}
