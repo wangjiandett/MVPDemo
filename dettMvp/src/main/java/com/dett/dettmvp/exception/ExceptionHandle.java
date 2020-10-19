@@ -2,7 +2,7 @@ package com.dett.dettmvp.exception;
 
 import android.content.Context;
 
-import com.dett.dettmvp.BaseApp;
+import com.dett.dettmvp.DettMvp;
 import com.dett.dettmvp.R;
 import com.google.gson.JsonParseException;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
@@ -32,7 +32,7 @@ public class ExceptionHandle {
     
     public static ResponseException handleException(Throwable e) {
         ResponseException ex;
-        Context context = BaseApp.getAppContext();
+        Context context = DettMvp.getInstance().getContext();
         if (e instanceof HttpException) {
             HttpException exception = (HttpException) e;
             ex = new ResponseException(e, Error.HTTP_ERROR);
