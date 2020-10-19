@@ -10,5 +10,6 @@
 
 **说明：** 由于原本使用的是公司接口测试，发布后仅提供部分可用测试案例
 
- ![image](https://raw.githubusercontent.com/wangjiandett/MVPDemo/main/device-2020-10-19-151231.gif)
+ ![image](device-2020-10-19-151231.gif)
+ ![avatar](device-2020-10-19-151231.gif)
 
