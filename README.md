@@ -9,3 +9,7 @@
 4. 自定义异常处理模块
 
 **说明：** 由于原本使用的是公司接口测试，发布后仅提供部分可用测试案例
+
+<video id="video" controls="" preload="none" poster="http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.jpg">
+      <source id="mp4" src="http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.mp4" type="video/mp4">
+</video>
