@@ -10,6 +10,5 @@
 
 **说明：** 由于原本使用的是公司接口测试，发布后仅提供部分可用测试案例
 
-<video id="video" controls="" preload="none" poster="https://github.com/wangjiandett/MVPDemo/blob/main/device-2020-10-19-151231.mp4">
-      <source id="mp4" src="https://github.com/wangjiandett/MVPDemo/blob/main/device-2020-10-19-151231.mp4" type="video/mp4">
-</video>
+ ![image](https://github.com/wangjiandett/MVPDemo/blob/main/device-2020-10-19-151231.gif)
+
