@@ -180,7 +180,7 @@ public abstract class BaseModel<Resp, Data> {
      */
     protected void dealError(Throwable e) {
         ResponseException throwable = ExceptionHandle.handleException(e);
-        onFail(throwable.message);
+        onFail(throwable.code, throwable.message);
     }
 
     /**
@@ -205,8 +205,9 @@ public abstract class BaseModel<Resp, Data> {
     /**
      * the fail callback
      *
+     * @param code the error code
      * @param msg the fail message
      */
-    protected abstract void onFail(String msg);
+    protected abstract void onFail(int code, String msg);
 
 }

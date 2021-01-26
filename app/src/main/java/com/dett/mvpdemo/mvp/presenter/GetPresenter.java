@@ -33,8 +33,8 @@ public class GetPresenter implements GetContract.IGetPresenter {
             }
 
             @Override
-            public void onFail(String msg) {
-                iView.onFail(msg);
+            public void onFail(int code, String msg) {
+                iView.onFail(code, msg);
             }
         });
     }

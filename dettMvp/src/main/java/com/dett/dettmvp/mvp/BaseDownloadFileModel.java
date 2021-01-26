@@ -1,6 +1,8 @@
 package com.dett.dettmvp.mvp;
 
 
+import com.dett.dettmvp.exception.ExceptionHandle;
+import com.dett.dettmvp.exception.ResponseException;
 import com.dett.dettmvp.utils.LogUtils;
 import com.dett.dettmvp.utils.Utils;
 
@@ -33,7 +35,7 @@ public abstract class BaseDownloadFileModel implements ProgressResultListener {
     /**
      * 监听下载进度，需要设置拦截器
      *
-     * @param listener 监听下载进度
+     * @param url 下载地址
      */
     protected abstract Observable<ResponseBody> getDownloadObservable(String url);
 
@@ -68,7 +70,8 @@ public abstract class BaseDownloadFileModel implements ProgressResultListener {
                     public void onError(Throwable e) {
                         LogUtils.d(e);
                         isDownloading = false;
-                        onFail(e.getMessage());
+                        ResponseException exception = ExceptionHandle.handleException(e);
+                        onFail(exception.code, exception.message);
                     }
 
                     @Override
@@ -117,8 +120,9 @@ public abstract class BaseDownloadFileModel implements ProgressResultListener {
     /**
      * the fail callback
      *
+     * @param code the fail code
      * @param msg the fail message
      */
-    protected abstract void onFail(String msg);
+    protected abstract void onFail(int code, String msg);
 
 }

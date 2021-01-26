@@ -37,8 +37,8 @@ public class PostModel extends AppModel<PostResponse> implements PostContract.IP
     }
 
     @Override
-    protected void onFail(String msg) {
-        mCallback.onFail(msg);
+    protected void onFail(int code, String msg) {
+        mCallback.onFail(code, msg);
     }
 
 }

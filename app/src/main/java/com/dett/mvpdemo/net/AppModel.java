@@ -28,6 +28,6 @@ public abstract class AppModel<Data> extends BaseResponseModel<Data> {
         if(throwable.code == NO_LOGIN_CODE){
             // 跳转到登录页
         }
-        onFail(throwable.message);
+        onFail(throwable.code, throwable.message);
     }
 }

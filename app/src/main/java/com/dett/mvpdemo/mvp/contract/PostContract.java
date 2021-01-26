@@ -27,7 +27,7 @@ public interface PostContract {
     interface IPostView {
         void onPostSuccess(PostResponse response);
 
-        void onFail(String msg);
+        void onFail(int code, String msg);
     }
 
 }

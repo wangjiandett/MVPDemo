@@ -27,7 +27,7 @@ public interface GetContract {
     interface IGetView {
         void onGetSuccess(List<GetResponse> response);
 
-        void onFail(String msg);
+        void onFail(int code, String msg);
     }
 
 }

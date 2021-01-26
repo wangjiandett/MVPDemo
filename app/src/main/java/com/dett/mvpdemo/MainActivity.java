@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements GetContract.IGetV
                 }
 
                 @Override
-                public void onFail(String msg) {
+                public void onFail(int code, String msg) {
                     showToast(msg);
                 }
             }).uploadFile("files", uploadFile);
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements GetContract.IGetV
                 }
 
                 @Override
-                public void onFail(String msg) {
+                public void onFail(int code, String msg) {
                     LogUtils.e(msg);
                     showToast(msg);
                 }
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements GetContract.IGetV
     }
 
     @Override
-    public void onFail(String msg) {
+    public void onFail(int code, String msg) {
         showToast(msg);
     }
 

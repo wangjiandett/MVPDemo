@@ -30,8 +30,8 @@ public class PostPresenter implements PostContract.IPostPresenter {
             }
 
             @Override
-            public void onFail(String msg) {
-                iView.onFail(msg);
+            public void onFail(int code, String msg) {
+                iView.onFail(code, msg);
             }
         });
     }
